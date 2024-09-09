@@ -15,6 +15,14 @@ class Locator
     protected $currency;
     protected $language;
 
+    /**
+     *
+     * @param string $ipAddress Set IP address to get their information.
+     * 
+     * Example (Singapore IP):
+     * $ipAddress = "34.124.137.169";
+     *
+     */
     public function __construct($ipAddress)
     {
         $this->client = new Client([
@@ -38,26 +46,90 @@ class Locator
 
     }
 
+    /**
+     * To get info of the IP. 
+     *  
+     * Return : 
+     * [ 
+     *  name => '', 
+     *  code => '', 
+     * ] 
+     *
+     */
     public function getInfo()
     {
         return $this->info;
     }
 
+    /**
+     * To get locale of the IP. 
+     *  
+     * Return : array of locales 
+     *
+     */
     public function getLocale()
     {
         return $this->locale;
     }
 
+    /**
+     * To get currency of the IP. 
+     *  
+     * Return : 
+     * [ 
+     *  name => '', 
+     *  code => '', 
+     * ] 
+     *
+     */
     public function getCurrency()
     {
         return $this->currency;
     }
 
+    /**
+     * To get language of the IP. 
+     *  
+     * Return : array of languages 
+     *
+     */
     public function getLanguage()
     {
         return $this->language;
     }
 
+    /**
+     * To get all information of the IP. 
+     *  
+     * Return example (34.124.137.169) :
+     * 
+     *[country] => Array
+     *    (
+     *        [name] => Singapore
+     *        [code] => SG
+     *    )
+     *
+     *[locales] => Array
+     *    (
+     *        [0] => zh_Hans_SG
+     *        [1] => en_SG
+     *    )
+     *
+     *[languages] => Array
+     *    (
+     *        [0] => en
+     *        [1] => ms
+     *        [2] => ta
+     *        [3] => zh
+     *    )
+     *
+     *[currency] => Array
+     *    (
+     *        [name] => Singapore Dollar
+     *        [code] => SGD
+     *    ) 
+     *
+    */
     public function getAll()
     {
         $data = (object) [
