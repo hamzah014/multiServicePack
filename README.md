@@ -1,2 +1,2 @@
 # multiServicePack
- Library for PHP services.
+ Composer Library for PHP services.
