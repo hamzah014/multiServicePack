@@ -195,7 +195,7 @@ class Conversion
      *     'to'=> "USD",
      * ]
      *
-     */
+    */
     public function convertCurrencies(array $arrayCurrency)
     {
         $arrCurrency = null;

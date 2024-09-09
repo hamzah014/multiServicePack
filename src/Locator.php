@@ -132,7 +132,7 @@ class Locator
     */
     public function getAll()
     {
-        $data = (object) [
+        $data = [
             'country' => $this->info,
             'locales' => $this->locale,
             'languages' => $this->language,
